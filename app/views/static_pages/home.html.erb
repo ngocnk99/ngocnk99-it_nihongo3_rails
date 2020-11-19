@@ -1,4 +1,5 @@
 <h1>Home Page</h1>
 
+  <% if user_signed_in? %>
 <%= link_to "ほんをみる", "/books" %>
-
+<% end %>
