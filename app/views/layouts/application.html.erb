@@ -10,6 +10,33 @@
   </head>
 
   <body>
+     <header>
+      
+      
+          
+         
+           <% if user_signed_in? %>
+    
+           
+             
+             
+                <div class="nav-item">
+                    <%= link_to "Home", "/" %>
+                <%= link_to "Log out" , destroy_user_session_path, method: :delete, class: "dropdown-item"%>
+               </div>
+             <div>
+              こんにちは  <%= current_user.email %>
+              </div>
+          <% else %>
+            <div class="nav-item">
+               <%= link_to "Sign up" , new_user_registration_path, method: :get%>
+              <%= link_to "Sign in", new_user_session_path, class: "nav-link"%>
+            </div>
+          <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>
+
+
+
