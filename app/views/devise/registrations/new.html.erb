@@ -13,6 +13,10 @@
       <%= f.number_field :age, :class => "form-control" %>
     </div>
 
+ <div class="form-group">
+      <%= f.label :avatar, "写真",:class => "form-label" %>
+      <%= f.file_field :avatar %>
+    </div>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
