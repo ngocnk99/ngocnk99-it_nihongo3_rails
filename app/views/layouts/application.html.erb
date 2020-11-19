@@ -22,6 +22,7 @@
              
                 <div class="nav-item">
                     <%= link_to "Home", "/" %>
+                     <%= link_to "Profile" , users_show_path, class: "dropdown-item"%>
                 <%= link_to "Log out" , destroy_user_session_path, method: :delete, class: "dropdown-item"%>
                </div>
              <div>
