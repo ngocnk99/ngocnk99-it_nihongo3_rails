@@ -26,9 +26,9 @@
 <div> Reviews</div>
 <ul>
   <% @book.book_review.each do |book_review|%>
-   <li>
+   <li class="m-auto">
         <i><%= book_review.user.name if book_review.user%>:</i>
-     <%= book_review.review %>
+         <%= book_review.review %>
    </li>
 <% end %>
 </ul>
