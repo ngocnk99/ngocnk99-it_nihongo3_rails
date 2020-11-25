@@ -26,8 +26,10 @@
 <div> Reviews</div>
 <ul>
   <% @book.book_review.each do |book_review|%>
-   <li><%= book_review.review %>
-   (<i><%= book_review.user_id %></i>)</li>
+   <li>
+        <i><%= book_review.user.name if book_review.user%>:</i>
+     <%= book_review.review %>
+   </li>
 <% end %>
 </ul>
 
@@ -36,11 +38,8 @@
         <div class= "field">
           <%= form.text_area :review, :class => "form-control" %>
           <%= form.hidden_field :book_id, :value => @book.id %>
-             <%= form.hidden_field :user_id, value: current_user.id %>
+          <%= form.hidden_field :user_id, value: current_user.id %>
         </div>
-      
-
-      
         <div class="actions">
           <%= form.submit %>
         </div>
