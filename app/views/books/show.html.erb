@@ -20,5 +20,26 @@
         <%= image_tag @book.image, class: "card-img-top",style:"border-radius:10px;width:200px;height:auto;" %>
         <% end %>
   </div>
+  
+
+<!--review-->
+
+  
+  
+    <%= form_with(model: @book_review, local: true) do |form| %>
+        <div class= "field">
+          <%= form.text_area :review, :class => "form-control" %>
+          <%= form.hidden_field :book_id, :value => @book.id %>
+             <%= form.hidden_field :user_id, value: current_user.id %>
+        </div>
+      
+
+      
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
+  
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
