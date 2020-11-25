@@ -10,10 +10,15 @@
   <%= @book.number_of_pages %>
 </p>
 
-  <div style="widht:200px;height:auto;">
+<p>
+  <strong>Detail:</strong>
+  <%= @book.detail %>
+</p>
+
+  <div>
 　　<% if @book.image.attached? %>
-        <%= image_tag @book.image, class: "card-img",style:"widht:100%!important" %>
+        <%= image_tag @book.image, class: "card-img-top",style:"border-radius:10px;width:200px;height:auto;" %>
         <% end %>
-        </div>
+  </div>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
